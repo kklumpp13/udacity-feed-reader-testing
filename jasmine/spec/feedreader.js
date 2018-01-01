@@ -33,7 +33,9 @@ $(function() {
          */
         it('have a URL defined and are not empty', function() {
           allFeeds.forEach(function(feed) {
+            //must exist
             expect(feed.url).toBeDefined();
+            //cannot be an empty string
             expect(feed.url.length).not.toBe(0);
           });
         });
@@ -44,7 +46,9 @@ $(function() {
          */
          it('have a name defined and names are not empty', function() {
            allFeeds.forEach(function(feed) {
+             //must exist
              expect(feed.name).toBeDefined();
+             //cannot be an empty string
              expect(feed.name.length).not.toBe(0);
            });
          });
@@ -59,6 +63,8 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+
+         // The index.html file has the .menu-hidden class added to the body by default
           it('is hidden by default', function() {
             var hidden = $('body').hasClass('menu-hidden');
             expect(hidden).toBe(true);
@@ -69,6 +75,8 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+          // JS in the app.js file toggles the .menu-hidden class on the body
           it('toggles visibility when the icon is clicked', function() {
             var menuIcon = $('.menu-icon-link');
 
